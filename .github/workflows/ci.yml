@@ -17,13 +17,13 @@ jobs:
         python -m pip install -r requirements-dev.txt
     - name: Run pylint
       run: |
-        pylint my_package
+        pylint my_package tests
     - name: Run flake8
       run: |
-        flake8 my_package
+        flake8 my_package tests
     - name: Run mypy
       run: |
-        mypy my_package
+        mypy my_package tests
     - name: Run tests
       run: |
         python -m unittest discover tests/*_test.py
