@@ -5,7 +5,7 @@ This python project uses the following technologies by default:
 - MkDocs for documentation
 - GitHub Actions for continuous integration
 - flake8, mypy, and pylint for linting
-- unittests for unit testing and integration testing
+- pytest for unit testing and integration testing
 - Docker for creating containerized applications
 
 ## Installation

@@ -26,4 +26,4 @@ jobs:
         mypy my_package tests
     - name: Run tests
       run: |
-        python -m unittest discover tests/*_test.py
+        python3 -m unittest discover -s tests/

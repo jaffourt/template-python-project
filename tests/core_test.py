@@ -1,22 +1,14 @@
 """A simple unit test for the project's core functionality"""
-import unittest
+import pytest
 
 from my_package.core import make_request
 
 
-class TestMakeRequest(unittest.TestCase):
-    """Test cases for make_request method"""
-
-    def test_make_request(self):
-        """Test default and custom behavior"""
-        # Test default behavior
-        default = make_request()
-        self.assertEqual(default.status_code, 200)
-
-        # Test with custom webpage
-        custom = make_request("https://www.google.com")
-        self.assertEqual(custom.status_code, 200)
-
-
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.parametrize("webpage, expected", [
+    ("https://www.example.com", 200),
+    ("https://www.google.com", 200),
+])
+def test_make_request(webpage, expected):
+    """Tests the make_request functionality for various inputs"""
+    response = make_request(webpage)
+    assert expected == response.status_code
