@@ -1,4 +1,4 @@
-# This is the main entry point of the module
+"""This is the main entry point of the module"""
 
 # Import the required functions, classes, etc. from the module
 from . import core
@@ -8,6 +8,7 @@ __all__ = ['core']
 
 
 def main():
+    """Main functionality of module"""
     print('Hello, world!')
 
 

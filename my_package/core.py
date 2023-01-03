@@ -7,15 +7,17 @@ DEFAULT_WEBPAGE = "https://www.example.com"
 
 def make_request(webpage: str = DEFAULT_WEBPAGE) -> requests.Response:
     """Make a simple request to a webpage"""
-    response = requests.get(webpage)
+    response = requests.get(webpage, timeout=5)
     return response
 
 
 def main():
+    """Main functionality of core module"""
     parser = argparse.ArgumentParser()
 
     # Add an argument
-    parser.add_argument('-w', '--webpage', help='webpage for the request', default=DEFAULT_WEBPAGE)
+    parser.add_argument('-w', '--webpage', help='webpage for the request',
+                        default=DEFAULT_WEBPAGE)
 
     # Parse the arguments
     args = parser.parse_args()
